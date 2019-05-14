@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Article List</title>
+    <style>
+        table {display: table;}
+        td {padding: 5px;}
+    </style>
+</head>
+<body>
+<table>
+    <tr><th>Title</th><th>Content</th><th>Tags</th></tr>
+<th:block th:each="article : ${articles}">
+
+    <tr th:object="${article}">
+        <td th:text="*{title}">...</td>
+        <td th:text="*{content}">...</td>
+        <td th:text="*{tags}">...</td>
+    </tr>
+
+</th:block>
+</table>
+</body>
+</html>
